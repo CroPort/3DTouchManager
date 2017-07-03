@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D3E6B5E1F0A434400A00F2B /* avatar_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E6B5C1F0A433C00A00F2B /* avatar_default@2x.png */; };
+		8D3E6B5F1F0A434700A00F2B /* fun.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E6B5D1F0A433C00A00F2B /* fun.png */; };
+		8D3E6B621F0A445800A00F2B /* ListDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E6B611F0A445800A00F2B /* ListDemoTableViewController.m */; };
+		8D3E6B651F0A447100A00F2B /* PriorityDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E6B641F0A447100A00F2B /* PriorityDemoViewController.m */; };
+		8D3E6B681F0A4F1900A00F2B /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E6B671F0A4F1900A00F2B /* TipViewController.m */; };
 		8D955C741F09ECD7009C1EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D955C731F09ECD7009C1EAC /* main.m */; };
 		8D955C771F09ECD7009C1EAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D955C761F09ECD7009C1EAC /* AppDelegate.m */; };
 		8D955C7A1F09ECD7009C1EAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D955C791F09ECD7009C1EAC /* ViewController.m */; };
@@ -14,14 +19,20 @@
 		8D955C7F1F09ECD7009C1EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D955C7E1F09ECD7009C1EAC /* Assets.xcassets */; };
 		8D955C821F09ECD7009C1EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D955C801F09ECD7009C1EAC /* LaunchScreen.storyboard */; };
 		8D955C8C1F09ED31009C1EAC /* CP3DTouchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D955C8B1F09ED31009C1EAC /* CP3DTouchManager.m */; };
-		8D9ABB701F09EE890084EB18 /* fun.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9ABB6E1F09EE890084EB18 /* fun.png */; };
-		8D9ABB711F09EE890084EB18 /* avatar_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9ABB6F1F09EE890084EB18 /* avatar_default@2x.png */; };
 		8D9ABB861F09F00C0084EB18 /* DemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9ABB831F09F0000084EB18 /* DemoCell.m */; };
 		8D9ABB881F09F0140084EB18 /* ImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9ABB821F09F0000084EB18 /* ImagePreviewViewController.m */; };
 		8D9ABB891F09F0160084EB18 /* TextPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9ABB841F09F0000084EB18 /* TextPreviewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D3E6B5C1F0A433C00A00F2B /* avatar_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar_default@2x.png"; sourceTree = "<group>"; };
+		8D3E6B5D1F0A433C00A00F2B /* fun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fun.png; sourceTree = "<group>"; };
+		8D3E6B601F0A445800A00F2B /* ListDemoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListDemoTableViewController.h; sourceTree = "<group>"; };
+		8D3E6B611F0A445800A00F2B /* ListDemoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListDemoTableViewController.m; sourceTree = "<group>"; };
+		8D3E6B631F0A447100A00F2B /* PriorityDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriorityDemoViewController.h; sourceTree = "<group>"; };
+		8D3E6B641F0A447100A00F2B /* PriorityDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriorityDemoViewController.m; sourceTree = "<group>"; };
+		8D3E6B661F0A4F1800A00F2B /* TipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
+		8D3E6B671F0A4F1900A00F2B /* TipViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipViewController.m; sourceTree = "<group>"; };
 		8D955C6F1F09ECD7009C1EAC /* 3DTouchManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3DTouchManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D955C731F09ECD7009C1EAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D955C751F09ECD7009C1EAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -34,8 +45,6 @@
 		8D955C831F09ECD7009C1EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D955C8A1F09ED31009C1EAC /* CP3DTouchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CP3DTouchManager.h; sourceTree = "<group>"; };
 		8D955C8B1F09ED31009C1EAC /* CP3DTouchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CP3DTouchManager.m; sourceTree = "<group>"; };
-		8D9ABB6E1F09EE890084EB18 /* fun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fun.png; path = ../../../../3DTouchUtil/3DTouchDemo/3DTouchDemo/fun.png; sourceTree = "<group>"; };
-		8D9ABB6F1F09EE890084EB18 /* avatar_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "avatar_default@2x.png"; path = "../../../../3DTouchUtil/3DTouchDemo/3DTouchDemo/avatar_default@2x.png"; sourceTree = "<group>"; };
 		8D9ABB7E1F09F0000084EB18 /* ImagePreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePreviewViewController.h; sourceTree = "<group>"; };
 		8D9ABB801F09F0000084EB18 /* DemoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCell.h; sourceTree = "<group>"; };
 		8D9ABB811F09F0000084EB18 /* TextPreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextPreviewViewController.h; sourceTree = "<group>"; };
@@ -86,6 +95,12 @@
 				8D955C761F09ECD7009C1EAC /* AppDelegate.m */,
 				8D955C781F09ECD7009C1EAC /* ViewController.h */,
 				8D955C791F09ECD7009C1EAC /* ViewController.m */,
+				8D3E6B601F0A445800A00F2B /* ListDemoTableViewController.h */,
+				8D3E6B611F0A445800A00F2B /* ListDemoTableViewController.m */,
+				8D3E6B631F0A447100A00F2B /* PriorityDemoViewController.h */,
+				8D3E6B641F0A447100A00F2B /* PriorityDemoViewController.m */,
+				8D3E6B661F0A4F1800A00F2B /* TipViewController.h */,
+				8D3E6B671F0A4F1900A00F2B /* TipViewController.m */,
 				8D955C7B1F09ECD7009C1EAC /* Main.storyboard */,
 				8D955C7E1F09ECD7009C1EAC /* Assets.xcassets */,
 				8D955C801F09ECD7009C1EAC /* LaunchScreen.storyboard */,
@@ -116,8 +131,8 @@
 		8D9ABB6D1F09EE720084EB18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				8D9ABB6F1F09EE890084EB18 /* avatar_default@2x.png */,
-				8D9ABB6E1F09EE890084EB18 /* fun.png */,
+				8D3E6B5C1F0A433C00A00F2B /* avatar_default@2x.png */,
+				8D3E6B5D1F0A433C00A00F2B /* fun.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -180,11 +195,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D9ABB711F09EE890084EB18 /* avatar_default@2x.png in Resources */,
 				8D955C821F09ECD7009C1EAC /* LaunchScreen.storyboard in Resources */,
+				8D3E6B5E1F0A434400A00F2B /* avatar_default@2x.png in Resources */,
 				8D955C7F1F09ECD7009C1EAC /* Assets.xcassets in Resources */,
 				8D955C7D1F09ECD7009C1EAC /* Main.storyboard in Resources */,
-				8D9ABB701F09EE890084EB18 /* fun.png in Resources */,
+				8D3E6B5F1F0A434700A00F2B /* fun.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +210,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D3E6B681F0A4F1900A00F2B /* TipViewController.m in Sources */,
+				8D3E6B621F0A445800A00F2B /* ListDemoTableViewController.m in Sources */,
 				8D955C7A1F09ECD7009C1EAC /* ViewController.m in Sources */,
+				8D3E6B651F0A447100A00F2B /* PriorityDemoViewController.m in Sources */,
 				8D9ABB881F09F0140084EB18 /* ImagePreviewViewController.m in Sources */,
 				8D9ABB861F09F00C0084EB18 /* DemoCell.m in Sources */,
 				8D955C8C1F09ED31009C1EAC /* CP3DTouchManager.m in Sources */,
@@ -321,6 +339,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = 3DTouchManagerDemo/Info.plist;
@@ -336,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = 3DTouchManagerDemo/Info.plist;

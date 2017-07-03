@@ -7,12 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "DemoCell.h"
-#import "CP3DTouchManager.h"
-#import "ImagePreviewViewController.h"
-#import "TextPreviewViewController.h"
+
 
 @interface ViewController ()
+
+@property (nonatomic, strong) NSDictionary *demoDic;
 
 @end
 
@@ -21,7 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [CP3DTouchManager makeViewController:self support3DTouchForView:self.tableView];
+    self.demoDic = @{
+                     @"List Demo" : @"LIST",
+                     @"Priority Demo" : @"PRIORITY"
+                     };
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,23 +32,17 @@
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return self.demoDic.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    DemoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellId"];
-    
-    cell.demoLabel.viewControllerFor3DTouch = ^UIViewController *{
-        TextPreviewViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Text"];
-        vc.title = @(indexPath.row).stringValue;
-        return vc;
-    };
-    cell.demoLabel.text = self.title;
-    
-    cell.demoImageView.viewControllerFor3DTouch = ^UIViewController *{
-        ImagePreviewViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"Image"];
-        return vc;
-    };
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellId"];
+    cell.textLabel.text = self.demoDic.allKeys[indexPath.row];
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSString *segueId = self.demoDic.allValues[indexPath.row];
+    [self performSegueWithIdentifier:segueId sender:nil];
 }
 /*
  #pragma mark - Navigation
