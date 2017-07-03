@@ -3,10 +3,11 @@
 //  3DTouchManagerDemo
 //
 //  Created by Mrc.cc on 2017/7/3.
-//  Copyright © 2017年 netease. All rights reserved.
+//  Copyright © 2017年 _yourcompany_. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "CP3DTouchManager.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [CP3DTouchManager setupPreviewCommitHandler:^(UIViewController *vc) {
+        UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
+        if ([nav isKindOfClass:[UINavigationController class]]) {
+            [nav pushViewController:vc animated:YES];
+        }
+    }];
     return YES;
 }
 

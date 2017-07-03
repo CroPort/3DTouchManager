@@ -1,6 +1,6 @@
 //
 //  ImagePreviewViewController.m
-//  3DTouchDemo
+//  3DTouchManagerDemo
 //
 //  Created by Mrc.cc on 2017/6/29.
 //  Copyright © 2017年 Mrc.cc. All rights reserved.
