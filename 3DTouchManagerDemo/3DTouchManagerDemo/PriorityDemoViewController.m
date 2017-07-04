@@ -3,7 +3,7 @@
 //  3DTouchManagerDemo
 //
 //  Created by Mrc.cc on 2017/7/3.
-//  Copyright © 2017年 netease. All rights reserved.
+//  Copyright © 2017年 _yourcompany_. All rights reserved.
 //
 
 #import "PriorityDemoViewController.h"
@@ -29,8 +29,8 @@ UIViewController * TipVcWithTitle(NSString *title){
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [CP3DTouchManager makeViewController:self support3DTouchForView:self.view];
     
+//    [CP3DTouchManager makeViewControllerSupport3DTouch:self];
     
     self.theView.viewControllerFor3DTouch = ^UIViewController *{
         return TipVcWithTitle(@"The View");

@@ -24,6 +24,9 @@
             [nav pushViewController:vc animated:YES];
         }
     }];
+    
+    [CP3DTouchManager makeViewControllerSupport3DTouch:self.window.rootViewController];
+    
     return YES;
 }
 

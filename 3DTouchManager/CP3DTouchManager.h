@@ -3,13 +3,27 @@
 //  3DTouchManagerDemo
 //
 //  Created by Mrc.cc on 2017/7/3.
-//  Copyright © 2017年 _yourcompany_. All rights reserved.
+//  Copyright © 2017年 Paul Chen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-// 如果少量的3DTouch处理则使用类方法就行，如果有大量的3DTouch支持并且PreviewController可能很复杂的时候推荐实例化一个Util来处理；
+// A 3DTouch recognize manager. Also work with mutiple recognized views at the same touch point base on priority.
+/*
+     The simplest way to use to use :
+     copy the following code into your AppDelegate.m method
+     `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions `
+ 
+     [CP3DTouchManager setupPreviewCommitHandler:^(UIViewController *vc) {
+         UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
+         if ([nav isKindOfClass:[UINavigationController class]]) {
+             [nav pushViewController:vc animated:YES];
+         }
+     }];
+ 
+     [CP3DTouchManager makeViewControllerSupport3DTouch:self.window.rootViewController];
+ */
 
 typedef void(^CPPreviewCommitHandler)(UIViewController *vc);
 typedef UIViewController *(^CPViewFor3DTouchHandler)(void);
@@ -19,8 +33,10 @@ typedef UIViewController *(^CPViewFor3DTouchHandler)(void);
 @property (nonatomic, copy) CPPreviewCommitHandler commitHandler;
 
 - (void)makeViewController:(UIViewController*)vc support3DTouchForView:(UIView*)view;
+- (void)makeViewControllerSupport3DTouch:(UIViewController*)vc;
 
 + (void)makeViewController:(UIViewController*)vc support3DTouchForView:(UIView*)view;
++ (void)makeViewControllerSupport3DTouch:(UIViewController*)vc;
 + (void)setupPreviewCommitHandler:(CPPreviewCommitHandler)commitHandler;
 
 @end
@@ -28,12 +44,14 @@ typedef UIViewController *(^CPViewFor3DTouchHandler)(void);
 typedef NSInteger CPView3DTouchPriority;
 
 @interface UIView (Touch3D)
-/// 返回当前视图响应3DTouch的vc.
+
+/// A handler that will return the priviewing view controller when 3DTouch recognized.
 @property (nonatomic, copy) CPViewFor3DTouchHandler viewControllerFor3DTouch;
-/// 3DTouch 优先级 default is 0. 当按压点存在多个可响应3DTouch事件的时候，根据优先级选择。
+/// The priority that define who will response to the recognized 3DTouch event at a touch point.
 @property (nonatomic, assign) CPView3DTouchPriority touch3DPriority;
 
-//  找出当前按压点的响应视图
+/// To find the view who can response to the 3DTouch event.
+/// The point supposed to be in the same coordinate system with `self`.
 - (UIView*)viewAtTouchPoint:(CGPoint)point;
 
 @end

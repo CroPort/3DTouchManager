@@ -164,7 +164,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = netease;
+				ORGANIZATIONNAME = yourcompany;
 				TargetAttributes = {
 					8D955C6E1F09ECD6009C1EAC = {
 						CreatedOnToolsVersion = 8.3.3;

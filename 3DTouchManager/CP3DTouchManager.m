@@ -3,7 +3,7 @@
 //  3DTouchManagerDemo
 //
 //  Created by Mrc.cc on 2017/7/3.
-//  Copyright © 2017年 _yourcompany_. All rights reserved.
+//  Copyright © 2017年 Paul Chen. All rights reserved.
 //
 
 #import "CP3DTouchManager.h"
@@ -41,12 +41,18 @@
 + (void)makeViewController:(UIViewController *)vc support3DTouchForView:(UIView *)view{
     [[CP3DTouchManager shared] makeViewController:vc support3DTouchForView:view];
 }
++ (void)makeViewControllerSupport3DTouch:(UIViewController *)vc{
+    [self makeViewController:vc support3DTouchForView:vc.view];
+}
 - (void)makeViewController:(UIViewController *)vc support3DTouchForView:(UIView *)view{
     
     if (vc.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
         CP3DTouchManager *util = [CP3DTouchManager shared];
         [vc registerForPreviewingWithDelegate:util sourceView:view];
     }
+}
+- (void)makeViewControllerSupport3DTouch:(UIViewController *)vc{
+    [self makeViewController:vc support3DTouchForView:vc.view];
 }
 #pragma mark 3D touch
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location{
@@ -87,39 +93,47 @@
 
 - (UIView *)viewAtTouchPoint:(CGPoint)point{
     
-    // 不可相应的视图返回空
+    // Do nothing when hidden == YES.
     if (self.hidden) {
         return nil;
     }
-    // 当前点击是否在Self上
-    BOOL isInSelf = CGRectContainsPoint(self.frame, point);
     
-    // 在self上则进行自视图遍历
+    // Check whether the point was contained.
+    BOOL isInSelf = CGRectContainsPoint(self.bounds, point);
+    
+    // Go through all subviews to find the appropriate view.
     if (isInSelf) {
         
         BOOL isScrollView = [self isKindOfClass:[UIScrollView class]];
         if (isScrollView) {
             UIScrollView *scrolView = (UIScrollView*)self;
-            // scrollview 需要加上偏移量
+            // Scrollview should plus contentOffSet.
             CGPoint offset = scrolView.contentOffset;
-            UIEdgeInsets adjustAutoInsets = UIEdgeInsetsZero;
+            UIEdgeInsets adjustContentInsets = UIEdgeInsetsZero;
 #ifdef __IPHONE_11_0
+            // iOS 11 only.
             if ([UIDevice currentDevice].systemVersion.floatValue >= 11.0) {
-                adjustAutoInsets = scrolView.adjustedContentInset;
+                adjustContentInsets = scrolView.adjustedContentInset;
             }
 #endif
-            point = CGPointMake(offset.x + point.x, offset.y + point.y + adjustAutoInsets.top);
+            point = CGPointMake(offset.x + point.x + adjustContentInsets.left, offset.y + point.y + adjustContentInsets.top);
         }
-        CGPoint origin = self.frame.origin;
+        
         UIView *touchView = nil;
         
         for (NSInteger i = self.subviews.count - 1; i >= 0; i --) {
-            // 自上而下查找响应3D touch 的view
+            // Find the view from front to back.
             UIView *view = [self.subviews objectAtIndex:i];
-            // view的frame是相对于self的，所以需要转化一下touchPoint
-            CGPoint convertPoint = CGPointMake(point.x - origin.x, point.y - origin.y);
+            // subview frame origin
+            CGPoint origin = view.frame.origin;
+            // subview bounds origin
+            CGPoint sorigin = view.bounds.origin;
+            
+            // Convert the point to the subview's coordinate system.
+            CGPoint convertPoint = CGPointMake(point.x - origin.x + sorigin.x, point.y - origin.y + sorigin.y);
+            
             UIView *result = [view viewAtTouchPoint:convertPoint];
-            // 存在可响应视图
+            // Find the view.
             if (result && result.viewControllerFor3DTouch) {
                 if (!touchView || touchView.touch3DPriority < result.touch3DPriority) {
                     touchView = result;
@@ -129,7 +143,7 @@
         if (touchView) {
             return touchView;
         }
-        // 子视图中没有可响应的则返回self
+        // If no view found, return self if self can response, otherwise return nil.
         return self.viewControllerFor3DTouch ? self : nil;
     }
     return nil;

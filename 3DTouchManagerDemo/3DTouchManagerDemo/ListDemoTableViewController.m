@@ -3,7 +3,7 @@
 //  3DTouchManagerDemo
 //
 //  Created by Mrc.cc on 2017/7/3.
-//  Copyright © 2017年 netease. All rights reserved.
+//  Copyright © 2017年 _yourcompany_. All rights reserved.
 //
 
 #import "ListDemoTableViewController.h"
@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [CP3DTouchManager makeViewController:self support3DTouchForView:self.tableView];
+//    [CP3DTouchManager makeViewController:self support3DTouchForView:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
