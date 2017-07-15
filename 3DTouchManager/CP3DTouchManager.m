@@ -104,21 +104,6 @@
     // Go through all subviews to find the appropriate view.
     if (isInSelf) {
         
-        BOOL isScrollView = [self isKindOfClass:[UIScrollView class]];
-        if (isScrollView) {
-            UIScrollView *scrolView = (UIScrollView*)self;
-            // Scrollview should plus contentOffSet.
-            CGPoint offset = scrolView.contentOffset;
-            UIEdgeInsets adjustContentInsets = UIEdgeInsetsZero;
-#ifdef __IPHONE_11_0
-            // iOS 11 only.
-            if ([UIDevice currentDevice].systemVersion.floatValue >= 11.0) {
-                adjustContentInsets = scrolView.adjustedContentInset;
-            }
-#endif
-            point = CGPointMake(offset.x + point.x + adjustContentInsets.left, offset.y + point.y + adjustContentInsets.top);
-        }
-        
         UIView *touchView = nil;
         
         for (NSInteger i = self.subviews.count - 1; i >= 0; i --) {
