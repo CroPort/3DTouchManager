@@ -6,7 +6,7 @@
 - iOS 8.0
 
 ## Installation
-Add `pod '3DTouchManager'` in your Podfile. 
+Add `pod 'CP3DTouchManager'` in your Podfile. 
 ## Usage
 
 ### 1.Setup 3DTouch previewing controller commit handler.

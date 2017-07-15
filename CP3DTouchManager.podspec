@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "3DTouchManager"
+  s.name         = "CP3DTouchManager"
   s.version      = "0.0.3"
   s.summary      = "Make 3DTouch easy to use."
 
