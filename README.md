@@ -1,5 +1,9 @@
 # 3DTouchManager
 
+## Screenshot
+
+![Sceenshot](Screenshots/demo.gif)
+
 ## Required
 
 - Xcode 8.0+
